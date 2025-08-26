@@ -1,0 +1,5 @@
+<app-header></app-header>
+<app-user-input (calculate)="onCalculate($event)"></app-user-input>
+@if (isResultsAvailable){
+    <app-results [results]="calculatedResults()"></app-results>
+}
