@@ -24,9 +24,6 @@ export class UserInputComponent {
   expectedReturn = signal<number>(this.expectedReturnValue);
   investmentDuration = signal<number>(this.investmentDurationValue); 
 
-  @Output() calculate = new EventEmitter<InvestmentInput>();
-  // calculate = output<InvestmentInput>();
-  @Output() updateInput = new EventEmitter<any>();
 
   onSubmit() {
     const inputData = {
@@ -39,10 +36,6 @@ export class UserInputComponent {
     // this.calculate.emit(inputData);
     this.calculateService.calculateInvestmentResults(inputData);
     this.resetInputs();
-  }
-
-  onChangeInput() {
-    this.updateInput.emit();
   }
 
   resetInputs() {
