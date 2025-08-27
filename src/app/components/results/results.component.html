@@ -1,4 +1,4 @@
-@if (results){
+@if (results()){
     <table>
         <thead>
             <tr>
@@ -10,7 +10,7 @@
             </tr>
         </thead>
         <tbody>
-            @for (r of results; track r.year){
+            @for (r of results(); track r.year){
                 <tr>
                     <td>{{ r.year }}</td>
                     <td>{{ r.interest | currency }}</td>
