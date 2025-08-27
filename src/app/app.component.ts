@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { HeaderComponent } from "./components/header/header.component";
 import { UserInputComponent } from "./components/user-input/user-input.component";
-import { InvestmentInput, InvestmentResultItem } from './models/investment.models';
+import { InvestmentInput, InvestmentResultItem } from './models/investment.model';
 import { ResultsComponent } from './components/results/results.component';
 import { CalculateService } from './services/calculate.service';
 
