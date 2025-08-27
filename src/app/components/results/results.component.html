@@ -1,22 +1,28 @@
-<table>
-    <thead>
-        <tr>
-            <th>Year</th>
-            <th>interest</th>
-            <th>valueEndOfYear</th>
-            <th>totalInterest</th>
-            <th>totalAmountInvested</th>
-        </tr>
-    </thead>
-    <tbody>
-        @for (r of results(); track r.year){
+@if (results){
+    <table>
+        <thead>
             <tr>
-                <td>{{ r.year }}</td>
-                <td>{{ r.interest | currency }}</td>
-                <td>{{ r.valueEndOfYear | currency }}</td>
-                <td>{{ r.totalInterest | currency }}</td>
-                <td>{{ r.totalAmountInvested | currency }}</td>
+                <th>Year</th>
+                <th>interest</th>
+                <th>valueEndOfYear</th>
+                <th>totalInterest</th>
+                <th>totalAmountInvested</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @for (r of results; track r.year){
+                <tr>
+                    <td>{{ r.year }}</td>
+                    <td>{{ r.interest | currency }}</td>
+                    <td>{{ r.valueEndOfYear | currency }}</td>
+                    <td>{{ r.totalInterest | currency }}</td>
+                    <td>{{ r.totalAmountInvested | currency }}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}@else {
+    <p>No investment calculated yet.</p>
+}
+
+

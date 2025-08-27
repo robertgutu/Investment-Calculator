@@ -20,18 +20,13 @@ export class AppComponent {
   calculate = inject(CalculateService);
 
   onCalculate(data: InvestmentInput) {
-    this.isResultsAvailable = false;
-    console.log("Calculating... for: ", data);
     const results = this.calculate.calculateInvestmentResults(data);
-    console.log("Results: ", results);
-    this.isResultsAvailable = true;
-    this.calculatedResults.set(results);
   } 
 
-  onUpdateInput(){
-    if (this.isResultsAvailable){
-      this.isResultsAvailable = false;
-      console.log("Form changed, hiding results...   ")
-    }
-  }
+  // onUpdateInput(){
+  //   if (this.isResultsAvailable){
+  //     this.isResultsAvailable = false;
+  //     console.log("Form changed, hiding results...   ")
+  //   }
+  // }
 }

@@ -1,5 +1,6 @@
 <app-header></app-header>
-<app-user-input (calculate)="onCalculate($event)" (updateInput)="onUpdateInput()"></app-user-input>
-@if (isResultsAvailable){
-    <app-results [results]="calculatedResults()"></app-results>
-}
+<app-user-input (calculate)="onCalculate($event)" ></app-user-input>
+<app-results ></app-results>
+<!-- @if (isResultsAvailable){
+    <app-results ></app-results>
+} -->
