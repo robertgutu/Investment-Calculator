@@ -1,4 +1,4 @@
-import { Component, EventEmitter, NgModule, Output, signal } from '@angular/core';
+import { Component, EventEmitter, NgModule, output, Output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { InvestmentInput } from '../../models/investment.models';
 
@@ -16,6 +16,7 @@ export class UserInputComponent {
   investmentDuration = signal<number>(10); 
 
   @Output() calculate = new EventEmitter<InvestmentInput>();
+  // calculate = output<InvestmentInput>();
   @Output() updateInput = new EventEmitter<any>();
 
   onSubmit() {
