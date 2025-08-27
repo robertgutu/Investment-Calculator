@@ -1,4 +1,4 @@
-import { Component, inject, input, Input } from '@angular/core';
+import { Component, computed, inject, input, Input } from '@angular/core';
 import { InvestmentResultItem } from '../../models/investment.model';
 import { CurrencyPipe } from '@angular/common';
 import { CalculateService } from '../../services/calculate.service';
@@ -13,7 +13,11 @@ import { CalculateService } from '../../services/calculate.service';
 export class ResultsComponent {
   private calculateService = inject(CalculateService);
 
-  get results() {
-    return this.calculateService.resultData;
-  }
+  // replace the getter with computed()
+  // get results() {
+  //   return this.calculateService.resultData;
+  // }
+
+  // used when wortking with signals
+  results = computed(() => this.calculateService.resultData());
 }
