@@ -10,6 +10,10 @@ export class CalculateService {
 
   resultData= signal<InvestmentResultItem[] | undefined> (undefined);
 
+  clearResults() {
+    this.resultData.set(undefined);
+  }
+
   calculateInvestmentResults(data: InvestmentInput) {
     const { initialInvestment, annualInvestment, expectedReturn, duration } = data;
     const annualData = [];

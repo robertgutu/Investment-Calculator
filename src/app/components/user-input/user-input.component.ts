@@ -12,7 +12,7 @@ import { CalculateService } from '../../services/calculate.service';
 })
 export class UserInputComponent {
 
-  constructor(private calculateService: CalculateService) { }
+  constructor(public calculateService: CalculateService) { }
 
   initialInvestmentValue:number = 0;
   annualInvestmentValue:number = 0;
@@ -42,7 +42,6 @@ export class UserInputComponent {
     this.initialInvestment.set(this.initialInvestmentValue);
     this.annualInvestment.set(this.annualInvestmentValue);
     this.expectedReturn.set(this.expectedReturnValue);  
-    this.investmentDuration.set(this.investmentDurationValue);
-    
+    this.investmentDuration.set(this.investmentDurationValue);  
   }
 }
