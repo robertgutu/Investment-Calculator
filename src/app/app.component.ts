@@ -27,4 +27,11 @@ export class AppComponent {
     this.isResultsAvailable = true;
     this.calculatedResults.set(results);
   } 
+
+  onUpdateInput(){
+    if (this.isResultsAvailable){
+      this.isResultsAvailable = false;
+      console.log("Form changed, hiding results...   ")
+    }
+  }
 }

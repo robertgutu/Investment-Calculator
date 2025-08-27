@@ -16,6 +16,7 @@ export class UserInputComponent {
   investmentDuration = signal<number>(10); 
 
   @Output() calculate = new EventEmitter<InvestmentInput>();
+  @Output() updateInput = new EventEmitter<any>();
 
   onSubmit() {
     const inputData = {
@@ -26,5 +27,9 @@ export class UserInputComponent {
     };
     console.log("Input Data:  ", inputData);
     this.calculate.emit(inputData);
+  }
+
+  onChangeInput() {
+    this.updateInput.emit();
   }
 }
